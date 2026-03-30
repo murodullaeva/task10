@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>My Acharya Friends</h1>
+
+{% for friend in friends %}
+    <p>AUID: {{ friend.AUID }}</p>
+    <p>Full name: {{ friend.full_name }}</p>
+    <p>Email: {{ friend.email }}</p>
+    <hr>
+{% empty %}
+    <p>Do'stlar hali kiritilmagan</p>
+{% endfor %}
+
+<a href="{% url 'AcharyaFriend' %}">Do'stlar qo'shish</a>
+</body>
+</html>

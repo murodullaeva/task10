@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Friends</title>
+    <title>Title</title>
 </head>
 <body>
-
-<h1>Mening do`stlarim:</h1>
+<p>Do`stlarni o`chirmoqchimisan?</p>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Qo'shish</button>
+    <button type="submit">delete</button>
+
 </form>
-<a href="{% url 'friend' %}">Orqaga</a>
 </body>
 </html>

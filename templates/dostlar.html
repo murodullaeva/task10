@@ -5,18 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-
 <h1>My Acharya Friends</h1>
-
-{% for friend in friends %}
-    <p>AUID: {{ friend.AUID }}</p>
-    <p>Full name: {{ friend.full_name }}</p>
-    <p>Email: {{ friend.email }}</p>
-    <hr>
+{% for f in friends %}
+    <a href="{% url 'friends_detail' f.pk %}">{{ f.name }}</a>
 {% empty %}
-    <p>Do'stlar hali kiritilmagan</p>
+    <h1>Do'stlar yo'q</h1>
 {% endfor %}
-
-<a href="{% url 'AcharyaFriend' %}">Do'stlar qo'shish</a>
+<a href="{% url 'AcharyaFriend ' %}">Yangi do'st qo'shish</a><br>
+<a href="{% url 'home' %}">Back to home</a>
 </body>
 </html>
+

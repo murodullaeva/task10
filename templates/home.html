@@ -9,7 +9,7 @@
 {% if user.is_authenticated %}
 <p>Siz Tizim ichidasiz</p>
     <a href="{% url 'profile' %}">Profil</a><br>
-      <a href="{% url 'Friend' %}">My Acharya Friends</a><br>
+    <a href="{% url 'friend' %}">My Acharya Friends</a><br>
     <form action="{% url 'logout' %}" method="post">
     {% csrf_token %}
     <button type="submit">Tizimdan Chiqish</button>

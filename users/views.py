@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render , redirect
 from sms.service import send_otp
-from users.forms import SignUpForm
+from users.forms import SignUpForm, UpdateProfileForm
 from django.utils import timezone
 from .models import OTP
 from sms.utils import generate_otp
@@ -64,3 +64,17 @@ def profile(request):
     return render(request,'profile.html',context)
 def change_done(request):
     return render(request,'change_password_done.html')
+
+def profile_update(request):
+    user = request.user
+    if request.method == 'POST':
+        form = UpdateProfileForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+        else:
+            form = UpdateProfileForm(request.POST, request.FILES, instance=user)
+            context = {
+                'form': form,
+            }
+            return render(request,'update_profile.html',context)

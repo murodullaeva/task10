@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import register , verify_otp , profile
+from .views import register , verify_otp , profile , profile_update
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView,PasswordChangeView,PasswordResetConfirmView,PasswordResetCompleteView , PasswordChangeDoneView
 
 urlpatterns = [
@@ -15,5 +15,6 @@ urlpatterns = [
     path('password-change/', PasswordChangeView.as_view(template_name='change_password.html'), name='password_change'),
     path('password-change-done/', PasswordChangeDoneView.as_view(template_name='change_password_done.html'),
          name='password_change_done'),
+    path('profile/update/', profile_update, name='profile_update')
 
 ]

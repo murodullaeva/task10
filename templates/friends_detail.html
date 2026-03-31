@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Batafsil ma`lumot</p>
+    <p>AUID: {{ friend.AUID }}</p>
+    <p>Full name: {{ friend.full_name }}</p>
+    <p>Email: {{ friend.email }}</p><br>
+
+    <a href="{% url 'friends' %}">Back</a>
+    <a href="{% url 'friends_update' %}">update</a>
+    <a href="{% url 'friends_delete' %}">delete</a>
+</body>
+</html>

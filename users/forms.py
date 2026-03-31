@@ -10,3 +10,9 @@ class SignUpForm(UserCreationForm):
 
 class VerifyOTPForm(forms.Form):
     otp = forms.CharField(max_length=6)
+
+
+class UpdateProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = fields = ['first_name', 'last_name', 'email']
